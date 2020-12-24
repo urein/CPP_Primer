@@ -1,0 +1,16 @@
+int f()
+{
+	static int cnt = -1;
+	cnt++;
+	return cnt;
+}
+
+
+int main()
+{
+	char ch;
+	while (cin >> ch)
+		cout << f() << endl;
+
+	return 0;
+}
