@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+#include<vector>
+
+using namespace std;
+
+int myadd(const int n1, const int n2)
+{
+	return n1 + n2;
+}
+
+int mysub(const int n1, const int n2)
+{
+	return n1 - n2;
+}
+
+int mymul(const int n1, const int n2)
+{
+	return n1 * n2;
+}
+
+int mydiv(const int n1, const int n2)
+{
+	return n1 / n2;
+}
+
+int f(int, int);
+vector<decltype(f)*> v_pf;
+
+void compute(int n1, int n2, int (*pf)(int, int))
+{
+	cout << (*pf)(n1, n2) << endl;
+}
+
+
+int main()
+{
+	decltype(myadd)* pf_add = myadd;
+	decltype(mysub)* pf_sub = &mysub;
+	decltype(mymul)* pf_mul = &mymul;
+	decltype(mydiv)* pf_div = &mydiv;
+
+	vector<decltype(myadd)*> v_pf = { pf_add, pf_sub, pf_mul, pf_div };
+
+	cout << v_pf[0] << endl;  // address
+
+	for (auto pf : v_pf)
+	{
+		compute(40, 20, pf);
+	}
+
+	return 0;
+}
