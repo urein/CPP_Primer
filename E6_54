@@ -1,0 +1,2 @@
+int f(int, int);
+vector<decltype(f)*> v_pf;
