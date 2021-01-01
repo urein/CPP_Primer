@@ -1,0 +1,20 @@
+#include <iostream>
+#include<vector>
+#include<list>
+using namespace std;
+
+
+int main()
+{
+	list<int> l_i = { 1, 2, 3, 4, 5, 6 };
+	
+	//vector<double> v_d(l_i);  // false
+	//vector<double> v_d = l_i;  // false
+	vector<double> v_d(l_i.begin(), l_i.end());
+
+	for (auto item : v_d)
+		cout << item << " ";
+	cout << endl;
+
+	return 0;
+}
