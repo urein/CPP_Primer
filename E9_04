@@ -1,0 +1,22 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+
+bool search_vec(vector<int>::iterator beg, vector<int>::iterator end, int n)
+{
+	while (beg != end)
+	{
+		if (*beg == n)
+			return true;
+		++beg;
+	}
+	return false;
+}
+
+int main()
+{
+	vector<int> v1 = { 1, 4, 3, 9, 20, 4, 6, 76 };
+	cout << search_vec(v1.begin(), v1.end(), 74) << endl;
+
+	return 0;
+}
