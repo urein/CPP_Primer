@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+
+// 1.9
 int main()
 {
 	int i = 50;
@@ -11,6 +13,49 @@ int main()
 		++i;
 	}
 	cout << sum << endl;
+
+	return 0;
+}
+
+
+// 1.10
+int main()
+{
+	int i = 10;
+	while (i >= 0) {
+		cout << i << " ";
+		i--;
+	}
+	cout << endl;
+	return 0;
+}
+
+
+// 1.11
+int main()
+{
+	cout << "Please input two numbers: ";
+	int n1, n2;
+
+	cin >> n1 >> n2;
+
+	if (n1 <= n2)
+	{
+		while (n1 != n2 + 1)
+		{
+			cout << n1 << " ";
+			++n1;
+		}
+	}
+	else
+	{
+		while (n1 != n2 - 1)
+		{
+			cout << n1 << " ";
+			--n1;
+		}
+	}
+	cout << endl;
 
 	return 0;
 }
