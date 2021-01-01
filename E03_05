@@ -1,0 +1,20 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	string str, s_concat;
+	cout << "Please input a series of string, stop with ctrl z: " << endl;
+	
+	while (cin >> str)
+	{
+		if (!s_concat.size())
+			s_concat += str;
+		else
+			s_concat = s_concat + " " + str;
+	}
+	cout << "concatenated string is: " << s_concat << endl;
+
+	return 0;
+}
