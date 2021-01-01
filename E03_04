@@ -1,0 +1,28 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	string str1, str2;
+	cout << "Please input two strings str1 and str2: ";
+	cin >> str1 >> str2;
+	
+	// compare string
+	if (str1 == str2)
+		cout << "They are the same." << endl;
+	else if (str1 > str2)
+		cout << str1 << " is larger than " << str2 << endl;
+	else
+		cout << str1 << " is smaller than " << str2 << endl;
+
+	// compare size
+	if (str1.size() == str2.size())
+		cout << "Their size are same." << endl;
+	else if (str1.size() > str2.size())
+		cout << "The size of " << str1 << " is larger than " << str2 << endl;
+	else
+		cout << "The size of " << str1 << " is smaller than " << str2 << endl;
+
+	return 0;
+}
