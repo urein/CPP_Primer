@@ -2,13 +2,19 @@
 #include<string>
 using namespace std;
 
-
 int main()
 {
-	string line;
-	cout << "input lines: " << endl;
-	while (getline(cin, line))
-		cout << line << endl;
-	
+	//// for line
+	//string line;
+	//cout << "input lines: " << endl;
+	//while (getline(cin, line))
+	//	cout << line << endl;
+
+	// for word
+	string word;
+	cout << "input words: " << endl;
+	while (cin >> word)
+		cout << word << endl;
+
 	return 0;
 }
