@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	string str = "Hello World";
-	for (auto& item : str)
+	for (auto& item : str)  // is char&
 	{ 
 		item = 'X';
 	}
