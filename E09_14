@@ -1,0 +1,23 @@
+#include<iostream>
+#include<string>
+# include<vector>
+#include<list>
+using namespace std;
+
+
+
+int main()
+{
+
+	list<const char*> slist = { "Hello", "World", "hello", "C++" };
+	vector<string> str_vec;
+
+	//str_vec = slist;  // false, different type
+	str_vec.assign(slist.begin(), slist.end());
+
+	for (auto item : str_vec)
+		cout << item << " ";
+	cout << endl;
+	
+	return 0;
+}
