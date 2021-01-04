@@ -1,0 +1,29 @@
+int main()
+{
+	vector<int> iv = { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+	auto iter = iv.begin();
+	auto sz = iv.size();
+	decltype(sz) new_elem = 0;
+	int some_value = 3;
+
+	// in each iteration calculate iterator again
+	while (iter != iv.begin() + sz / 2 + new_elem)  
+	{
+		if (*iter == some_value)
+		{
+			// after inserting element previous iterator is no more valid
+			iter = iv.insert(iter, some_value * 10);  
+			++new_elem;
+			iter += 2;  // *
+		}
+		else
+			++iter;
+	}
+
+	for (auto elem : iv)
+		cout << elem << " ";
+	cout << endl;
+
+	return 0;
+}
