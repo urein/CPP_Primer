@@ -1,0 +1,17 @@
+int main()
+{
+	vector<string> svec;
+	string word;
+
+	auto it = svec.begin();
+	while (cin >> word)
+	{
+		it = svec.insert(it, word);  // insert element in front of vector causes bad performance
+	}
+
+	for (auto w : svec)
+		cout << w << " ";
+	cout << endl;
+
+	return 0;
+}
