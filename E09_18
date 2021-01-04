@@ -1,0 +1,14 @@
+int main()
+{
+	string word;
+
+	deque<string> text;
+	while (cin >> word)
+		text.push_back(word);
+
+	for (auto it = text.begin(); it != text.end(); ++it)
+		cout << *it << " ";
+	cout << endl;
+
+	return 0;
+}
