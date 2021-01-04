@@ -1,0 +1,50 @@
+// list version
+int main()
+{
+	list<int> lst = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	auto curr = lst.begin();
+
+	while (curr != lst.end())
+	{
+		if (*curr % 2)
+		{
+			curr = lst.insert(curr, *curr);
+			++curr, ++curr;
+		}
+		else
+			curr = lst.erase(curr);
+	}
+
+	for (auto s : lst)
+		cout << s << " ";
+	cout << endl;
+
+	return 0;
+}
+
+
+// forward_list version
+int main()
+{
+	forward_list<int> ilst = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	auto curr = ilst.begin();
+	auto prev = ilst.before_begin();
+
+	while (curr != ilst.end())
+	{
+		if (*curr % 2)
+		{
+			curr = ilst.insert_after(prev, *curr);
+			++curr, ++curr;
+			++prev, ++prev;
+		}
+		else
+			curr = ilst.erase_after(prev);
+	}
+
+	for (auto s : ilst)
+		cout << s << " ";
+	cout << endl;
+
+	return 0;
+}
