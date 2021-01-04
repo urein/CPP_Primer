@@ -1,0 +1,22 @@
+int main()
+{
+	list<int> lst = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	deque<int> d_odd, d_even;
+
+	for (auto it = lst.begin(); it != lst.end(); ++it)
+	{
+		if (*it % 2)
+			d_odd.push_back(*it);
+		else
+			d_even.push_back(*it);
+	}
+	for (auto i_odd : d_odd)
+		cout << i_odd << " ";
+	cout << endl;
+
+	for (auto i_even : d_even)
+		cout << i_even << " ";
+	cout << endl;
+
+	return 0;
+}
