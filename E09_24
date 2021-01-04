@@ -1,0 +1,11 @@
+int main()
+{
+	vector<int> iv = { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+	cout << iv.at(0) << endl;
+	cout << iv[0] << endl;
+	cout << iv.front() << endl;
+	cout << *iv.begin() << endl;
+
+	return 0;
+}
