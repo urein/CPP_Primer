@@ -1,0 +1,20 @@
+bool ivecEqual(const vector<int>& v1, const vector<int>& v2)
+{
+	return v1 == v2;
+}
+
+int main()
+{
+	vector<int> v1 = { 1, 2, 3, 4, 5 };
+	vector<int> v2 = { 1, 2, 3, 4, 5, 6 };
+
+	cout << ivecEqual(v1, v2) << endl;  // 0
+	
+	v2.pop_back();
+	cout << v1.size() << " " << v1.capacity() << endl;  // 5 5
+	cout << v2.size() << " " << v2.capacity() << endl;  // 5 6
+	
+	cout << ivecEqual(v1, v2) << endl;  // 1
+
+	return 0;
+}
