@@ -1,0 +1,23 @@
+int main()
+{
+	forward_list<int> ifl = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	auto iter = ifl.begin();
+	auto prev = ifl.before_begin();
+
+	while (iter != ifl.end())
+	{
+		if (*iter % 2)
+			iter = ifl.erase_after(prev);
+		else
+		{
+			prev = iter;
+			++iter;
+		}
+	}
+
+	for (auto elem : ifl)
+		cout << elem << " ";
+	cout << endl;
+
+	return 0;
+}
