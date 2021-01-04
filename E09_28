@@ -1,0 +1,32 @@
+void func(forward_list<string>& sfl, string str1, string str2)
+{
+	auto curr = sfl.begin();
+	auto prev = sfl.before_begin();
+	bool found = false;
+	
+	while (curr != sfl.end())
+	{
+		if (*curr == str1)
+		{
+			curr = sfl.insert_after(curr, str2);
+			found = true;
+		}
+		prev = curr;
+		++curr;		
+	}
+	if (!found)
+		sfl.insert_after(prev, str2);
+
+}
+
+int main()
+{
+	forward_list<string> sfl = { "Hello", "World", "Hello", "2021" };
+	func(sfl, "hello", "!!");
+
+	for (auto s : sfl)
+		cout << s << " ";
+	cout << endl;
+
+	return 0;
+}
