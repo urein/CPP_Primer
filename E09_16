@@ -1,0 +1,26 @@
+bool l_v_equal(const list<int>& lst, const vector<int>& vec)
+{
+	if (lst.size() != vec.size())
+		return false;
+	
+	auto lbeg = lst.cbegin();
+	auto lvec = vec.cbegin();
+	
+	for (; lbeg != lst.cend(); ++lbeg, ++lvec)
+	{
+		if (*lbeg != *lvec)
+			return false;
+	}
+	return true;
+}
+
+
+int main()
+{
+	list<int> l = { 1, 2, 3, 4, 5, 6 };
+	vector<int> v = { 1, 2, 3, 4, 5, 6 };
+
+	cout << l_v_equal(l, v) << endl;
+
+	return 0;
+}
