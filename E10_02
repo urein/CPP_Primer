@@ -1,0 +1,12 @@
+int main()
+{
+	list<string> slst = { "Hello", "World", "Hello", "C++", "2021", "Hello" };
+	
+	string tar;
+	cout << "Please input target word: ";
+	cin >> tar;
+	auto r = count(slst.begin(), slst.end(), tar);
+	cout << r << endl;
+
+	return 0;
+}
