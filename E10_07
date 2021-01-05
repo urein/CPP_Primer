@@ -1,0 +1,20 @@
+int main()
+{
+	vector<int> vec;
+	list<int> lst = { 1, 2, 3, 4, 5 };
+	copy(lst.begin(), lst.end(), back_inserter(vec));  // vec is empty, back_inserter is necessary
+	
+	for (auto i : vec)
+		cout << i << " ";
+	cout << endl;
+
+	vector<int> v;
+	v.reserve(10);
+	fill_n(back_inserter(v), 10, 0);  // v doesn't have any element, back_inserter is also necessary
+
+	for (auto i : v)
+		cout << i << " ";
+	cout << endl;
+
+	return 0;
+}
