@@ -1,0 +1,14 @@
+void add(int a)
+{
+	auto sum = [a](int n) {return a + n; };
+	cout << sum(10) << endl;
+}
+
+
+int main()
+{
+	add(1);  // 11
+	add(2);  // 12
+
+	return 0;
+}
