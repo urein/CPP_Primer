@@ -1,0 +1,12 @@
+int main()
+{
+	int n = 3;
+	auto f = [n]()mutable->bool
+	{if (n > 0) { --n; return false; }
+	 else return true; };
+	
+	for (int i = n; i != -2; --i)
+		cout << f() << endl;
+
+	return 0;
+}
