@@ -1,0 +1,14 @@
+void f_count(const vector<string>& svec, vector<string>::size_type sz)
+{
+	auto cnt = count_if(svec.begin(), svec.end(),
+		[sz](string s) {return s.size() > sz; });
+	cout << "There are " << cnt << " words, whose size are larger than " << sz << "." << endl;
+}
+
+int main()
+{
+	vector<string> sv = { "Keep", "your", "friends", "close", "but", "your", "enemies", "closer" };
+	f_count(sv, 6);
+
+	return 0;
+}
