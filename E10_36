@@ -1,0 +1,11 @@
+int main()
+{
+	list<int> lst = { 1, 3, 0, 2, 6, 0, 9, 10 };
+	auto last_0 = find(lst.crbegin(), lst.crend(), 0);
+	last_0++;  // left of last 0
+	list<int>::size_type idx = 0;
+	for (auto it = lst.begin(); it != last_0.base(); ++it, ++idx);
+	cout << "index of last zero is: " << idx << endl;
+
+	return 0;
+}
