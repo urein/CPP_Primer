@@ -1,0 +1,2 @@
+	typedef bool (*pf) (Sales_data&, Sales_data&);
+	multiset<Sales_data, pf> bookstore(compareIsbn);
