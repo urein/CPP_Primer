@@ -1,0 +1,65 @@
+struct X
+{
+	X() { cout << "constructor" << endl; }
+	X(const X&) { cout << "copy constructor" << endl; }
+	~X() { cout << "destructor" << endl; }
+	X& operator=(const X& rhs)
+	{
+		cout << "copy-assignment operator" << endl;
+		return *this;
+	}
+
+};
+
+void test1(X x)
+{
+	// PRINT: 
+	// copy constructor 
+	// destructor
+}
+
+void test2(X& x)
+{
+	// PRINT: 
+}
+
+
+int main()
+{
+	cout << "define local variable x" << endl;
+	X x;  // PRINT: constructor
+	cout << endl;  
+
+	cout << "passing parameter" << endl;
+	test1(x);
+	cout << endl;
+	
+	cout << "passing reference" << endl;
+	test2(x);
+	cout << endl;
+
+	cout << "dynamic allocation" << endl;
+	X* px = new X;  // PRINT: constructor
+	cout << endl;
+
+	cout << "push in container" << endl;
+	vector<X> vx;
+	vx.push_back(x);  // PRINT: copy constructor
+	cout << endl;
+
+	cout << "delete" << endl;
+	delete px;  // PRINT: destructor
+	cout << endl;
+
+	cout << "initialization and assignment" << endl;
+	X x1 = x;  // PRINT: copy constructor
+	x1 = x;  // PRINT: copy-assignment operator
+	cout << endl;
+
+	cout << "end of codes" << endl;
+
+	return 0;
+}
+// PRINT: destructor (for x)
+// PRINT: destructor (for element in container)
+// PRINT: destructor (for x1)
