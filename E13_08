@@ -1,0 +1,6 @@
+HasPtr& HasPtr::operator=(const HasPtr& rhs)
+{
+	i = rhs.i;
+	ps = new string(*rhs.ps);
+	return *this;
+}
