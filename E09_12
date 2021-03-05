@@ -1,0 +1,15 @@
+接受一个已有容器的构造函数：拷贝容器中所有的元素，容器类型必须一致
+接受两个迭代器的构造函数：拷贝迭代器指定范围内的元素，迭代器可以指向一个不同类型的容器
+
+int main()
+{
+	vector<float> f_vec = { 1, 2, 3.0, 4, 5 };
+	//vector<int> i_vec(f_vec);  // error
+	vector<int> i_vec(f_vec.begin() + 1, f_vec.end() - 1);  // 没问题
+
+	for (auto i : i_vec)
+		cout << i;
+	cout << endl;
+
+	return 0;
+}
