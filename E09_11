@@ -10,9 +10,10 @@ int main()
 	cout << v0.capacity() << endl;  // 0
 
 	vector<int> v1 = { 0, 1, 2, 3, 4, 5, 6 };
-	vector<int> v2 = v1;  // v2 must have same type as v1(vector<int>)
+	vector<int> v2 = v1;  // v2必须和v1具有相同的类型
 	vector<int> v3(v2);
 
+	// 使用迭代器初始化对象，迭代器可以指向另一个不同(类型)的容器，只要元素可以完成类型转换即可
 	vector<int> v4(v1.begin() + 1, v1.end() - 3);  // {1, 2, 3}
 	vector<int> v5(v1.cbegin() + 1, v1.cend() - 3);  // {1, 2, 3}
 
