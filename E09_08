@@ -1,0 +1,2 @@
+读取元素：list<string>::value_type
+写入元素：list<string>::reference
