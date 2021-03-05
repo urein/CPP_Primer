@@ -1,0 +1,2 @@
+write: vector<int>::iterator
+read-only: vector<int>::const_iterator
